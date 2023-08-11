@@ -1,0 +1,19 @@
+.story {
+  padding: 1rem 0;
+  border-bottom: 1px solid lightgray;
+  word-break: break-all;
+  display: block;
+}
+.story:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  color: gray;
+}
+
+.gray {
+  color: gray;
+}
+
+.small-line {
+  font-size: 0.8rem;
+}
