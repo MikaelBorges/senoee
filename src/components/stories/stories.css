@@ -18,24 +18,6 @@
   counter-reset: item;
 }
 
-.button {
-  border: 0;
-  background-color: transparent;
-}
-.button:hover {
-  cursor: pointer;
-}
-
-.reload {
-  font-size: 1.5rem;
-  display: flex;
-}
-
-.more {
-  margin: 1rem;
-  width: fit-content;
-}
-
 @media (prefers-color-scheme: dark) {
   h3 {
     color: black;
@@ -44,9 +26,5 @@
   .news {
     border-left: 20px solid #333;
     border-right: 20px solid #333;
-  }
-
-  .more {
-    color: white;
   }
 }

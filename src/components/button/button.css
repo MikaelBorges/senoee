@@ -1,0 +1,23 @@
+.button {
+  border: 0;
+  background-color: transparent;
+}
+.button:hover {
+  cursor: pointer;
+}
+
+.button-icon {
+  font-size: 1.5rem;
+  display: flex;
+}
+
+.button-text {
+  margin: 1rem;
+  width: fit-content;
+}
+
+@media (prefers-color-scheme: dark) {
+  .button-text {
+    color: white;
+  }
+}

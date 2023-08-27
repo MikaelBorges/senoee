@@ -29,7 +29,7 @@ const fakeStories = [
 const fakeFetch = jest.fn();
 
 test("authors", () => {
-  render(<Stories newAndTopStories={fakeStories} fetchData={fakeFetch} />);
+  render(<Stories topStories={fakeStories} fetchData={fakeFetch} />);
   const authorTextOne = screen.getByText("Jack");
   expect(authorTextOne).toBeInTheDocument();
   const authorTextTwo = screen.getByText("Daniel");

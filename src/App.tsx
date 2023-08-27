@@ -3,7 +3,7 @@ import { useGetStories } from "./hooks/useGetStories";
 import { CenteredMessage } from "./components/centeredMessage/centeredMessage";
 
 export default function App() {
-  const { newAndTopStories, isLoading, isError, fetchData } = useGetStories();
+  const { topStories, isLoading, isError, fetchData } = useGetStories();
 
   return (
     <>
@@ -13,7 +13,7 @@ export default function App() {
           text={isLoading ? "loading..." : "error, something went wrong"}
         />
       ) : (
-        <Stories newAndTopStories={newAndTopStories} fetchData={fetchData} />
+        <Stories topStories={topStories} fetchData={fetchData} />
       )}
     </>
   );

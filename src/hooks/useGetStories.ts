@@ -1,20 +1,20 @@
 import { useState, useEffect } from "react";
 import { StoryType } from "../types/storyType";
-import { getNewAndTopStories, getItemsByIds } from "../api/hackerNews";
+import { getTopStories, getItemsByIds } from "../api/hackerNews";
 
 const seconds = 30;
 
 export function useGetStories() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<boolean>(false);
-  const [newAndTopStories, setNewAndTopStories] = useState<StoryType[]>([]);
+  const [topStories, setTopStories] = useState<StoryType[]>([]);
 
   const fetchData = () => {
     const getStories = async () => {
       try {
-        const storiesIds = await getNewAndTopStories();
+        const storiesIds = await getTopStories();
         const stories = await getItemsByIds(storiesIds);
-        setNewAndTopStories(stories);
+        setTopStories(stories);
       } catch {
         setIsError(true);
       } finally {
@@ -31,5 +31,5 @@ export function useGetStories() {
     return () => clearInterval(interval);
   }, []);
 
-  return { newAndTopStories, isLoading, isError, fetchData };
+  return { topStories, isLoading, isError, fetchData };
 }
